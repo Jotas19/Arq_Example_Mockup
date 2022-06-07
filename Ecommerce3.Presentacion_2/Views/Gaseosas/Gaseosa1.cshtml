@@ -1,0 +1,217 @@
+﻿<!-- products -->
+	<div class="products">	 
+		<div class="container">  
+			<div class="single-page">
+				<div class="single-page-row" id="detail-21">
+					<div class="col-md-6 single-top-left">	
+						<div class="flexslider">
+							<ul class="slides" >
+								<li data-thumb="~/css/Imagenes_Productos/Gaseosas/Gaseosas_1.png">
+									
+										<div class="thumb-image detail_images" id="imagen_producto"> 
+											<!--<img src="~/css/Imagenes_Productos/Gaseosas/Gaseosas_1.png" data-imagezoom="true" class="img-responsive" alt="">--> 
+										</div> 
+															
+								</li>		
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-6 single-top-right" >
+						<div id="contenedor_principal">
+
+						</div>
+						<div class="single-rating">
+							<ul>
+								
+							</ul> 
+						</div>
+						<div class="single-price" >
+							<ul id="precio_producto">
+								<!-- <li>$5.700</li>  -->
+							</ul>	
+						</div> 
+						<div id="comentario_producto">
+							
+						</div>
+						
+						<form action="#" method="post" id="form_carrito">
+							<input type="hidden" name="cmd" value="_cart" />
+							<input type="hidden" name="add" value="1" /> 
+							
+							<!-- <input type="hidden" name="amount" value="540.00" /> -->
+							<button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Añadir al carrito</button>
+						</form>
+						
+					</div>
+				   <div class="clearfix"> </div>  
+				</div>
+				<div class="single-page-icons social-icons"> 
+					
+				</div>
+			</div> 
+			<!-- recommendations -->
+			
+			<!-- //recommendations --> 
+			<!-- collapse-tabs -->
+			<div class="collpse tabs">
+				<h3 class="w3ls-title">Sobre este artículo </h3> 
+				<div class="panel-group collpse" id="accordion" role="tablist" aria-multiselectable="true">
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingOne">
+							<h4 class="panel-title">
+								<a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									<i class="fa fa-file-text-o fa-icon" aria-hidden="true"></i> Descripción <span class="fa fa-angle-down fa-arrow" aria-hidden="true"></span> <i class="fa fa-angle-up fa-arrow" aria-hidden="true"></i>
+								</a>
+							</h4>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+							<div class="panel-body">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							</div>
+						</div>
+					</div>
+					<br />
+				
+
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingThree">
+							<h4 class="panel-title">
+								<a class="collapsed pa_italic" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									<i class="fa fa-check-square-o fa-icon" aria-hidden="true"></i> Comentarios <span class="fa fa-angle-down fa-arrow" aria-hidden="true"></span> <i class="fa fa-angle-up fa-arrow" aria-hidden="true"></i>
+								</a>
+							</h4>
+						</div>
+						<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+							<div class="panel-body" id="contenedor_comentario">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<!-- //collapse --> 
+			<!-- offers-cards --> 
+			
+
+			<!-- //offers-cards -->
+		</div>
+	</div>
+	<!--//products-->  
+		<script>
+
+			$(document).ready(function(){
+				MostrarProducto();
+			})
+
+			function MostrarProducto()
+			{
+				jQuery.ajax({
+					url: "@Url.Action("ListarProductoImagen","Home")",
+					type: "GET",
+					dataType: "json",
+					contentType: "application/json; charset=utf-8",
+					success: function (response){
+						//<img src="~/css/Imagenes_Productos/Gaseosas/Gaseosas_1.png" data-imagezoom="true" class="img-responsive" alt="">
+						
+						
+						$.each(response.data, function (i,element)
+						{
+							$("<img>").attr({"src":element.url,"data-imagezoom":"true","class":"img-responsive","alt":""}).appendTo("#imagen_producto")
+							
+						})
+					}
+				})
+
+				jQuery.ajax({
+					url: "@Url.Action("ListarProducto","Home")",
+					type: "GET",
+					dataType: "json",
+					contentType: "application/json; charset=utf-8",
+					success: function (response){
+						//
+						//$("<div>").addClass("item_name")
+						//<input type="hidden" name="w3ls_item" value="Snow Blower" /> 
+						//<input type="hidden" name="amount" value="540.00" />
+						
+						$.each(response.data, function (i,element)
+						{
+							$("<input>").attr({"type":"hidden","name":"w3ls_item","value":element.nombre}).appendTo("#form_carrito")
+							$("<input>").attr({"type":"hidden","name":"amount","value":element.precio}).appendTo("#form_carrito")
+						})
+					}
+				})
+
+				jQuery.ajax({
+					url: "@Url.Action("ListarImagenProducto","Home")",
+					type: "GET",
+					dataType: "json",
+					contentType: "application/json; charset=utf-8",
+					success: function (response){
+						//
+						//$("<div>").addClass("item_name")
+						//<input type="hidden" name="w3ls_item" value="Snow Blower" /> 
+						//<input type="hidden" name="amount" value="540.00" />
+						
+						$.each(response.data, function (i,element)
+						{
+							$("<input>").attr({"type":"hidden","name":"w3ls_item","value":element.nombre}).appendTo("#form_carrito")
+							$("<input>").attr({"type":"hidden","name":"amount","value":element.precio}).appendTo("#form_carrito")
+						})
+					}
+				})
+
+				jQuery.ajax({
+					url: "@Url.Action("ListarProducto","Home")",
+					type: "GET",
+					dataType: "json",
+					contentType: "application/json; charset=utf-8",
+					success: function (response){
+
+						//
+						//$("<div>").addClass("item_name")
+						//<input type="hidden" name="w3ls_item" value="Snow Blower" /> 
+						//<h3 class="item_name">Coca-Cola 1.5 Litros</h3>
+						//<li>$5.700</li>  
+
+						$.each(response.data, function (i=0,element)
+						{
+							$("<h3>").text(element.nombre).attr({"class":"item_name"}).appendTo("#contenedor_principal")
+							$("<li>").text("$ "+element.precio+".00").appendTo("#precio_producto")
+						})
+					}
+				})
+
+				
+
+				jQuery.ajax({
+					url: "@Url.Action("ListarProducto","Home")",
+					type: "GET",
+					dataType: "json",
+					contentType: "application/json; charset=utf-8",
+					success: function (response){
+
+						//
+						//$("<div>").addClass("item_name")
+						//<input type="hidden" name="w3ls_item" value="Snow Blower" /> 
+						//<h3 class="item_name">Coca-Cola 1.5 Litros</h3>
+						//<li>$5.700</li>  
+						//<p class="single-price-text">Fusce a egestas nibh, eget ornare erat. Proin placerat, urna et consequat efficitur, sem odio blandit enim, sit amet euismod turpis est mattis lectus. Vestibulum maximus quam et quam egestas imperdiet. In dignissim auctor viverra. </p>
+
+						$.each(response.data, function (i=0,element)
+						{
+							$("<p>").text(element.descripcion).attr({"class":"single-price-text"}).appendTo("#comentario_producto")
+							
+						})
+					}
+				})
+			}
+		
+		
+		
+		</script>
+
+
+
+	
