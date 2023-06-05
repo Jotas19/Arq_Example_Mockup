@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="754b82d324aa4af39726422d0e80b586" Name="Diagram1" ZoomLevel="105">
+        <EntityTypeShape EntityType="Ecommerce1Model.Calificacion" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ecommerce1Model.Categoria" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ecommerce1Model.CategoriaProducto" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ecommerce1Model.Cliente" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ecommerce1Model.Comentario" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ecommerce1Model.DetalleFactura" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ecommerce1Model.Factura" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ecommerce1Model.Facturacion" Width="1.5" PointX="6" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ecommerce1Model.FormaPago" Width="1.5" PointX="1.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ecommerce1Model.ImagenProducto" Width="1.5" PointX="6" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ecommerce1Model.Producto" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="Ecommerce1Model.FK_Calificacion_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Ecommerce1Model.FK_Calificacion_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="Ecommerce1Model.FK_CategoriaProducto_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="Ecommerce1Model.FK_CategoriaProducto_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="Ecommerce1Model.FK_Comentario_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Ecommerce1Model.FK_Factura_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Ecommerce1Model.FK_Comentario_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="Ecommerce1Model.FK_DetalleFactura_Factura" ManuallyRouted="false" />
+        <AssociationConnector Association="Ecommerce1Model.FK_DetalleFactura_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="Ecommerce1Model.FK_Factura_FormaPago" ManuallyRouted="false" />
+        <AssociationConnector Association="Ecommerce1Model.FK_Facturacion_Factura" ManuallyRouted="false" />
+        <AssociationConnector Association="Ecommerce1Model.FK_ImagenProducto_Producto" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
